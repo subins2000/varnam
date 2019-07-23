@@ -198,7 +198,7 @@
 
     $(document).on('click', '#suggestions li', function() {
         if (suggestions.length !== 0) {
-            replaceWord(suggestions[$(this).index()]);
+            replaceWord($(this).text());
         }
     });
 
