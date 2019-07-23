@@ -98,6 +98,7 @@
 
         input.val(text.substring(0, start) + word + text.substring(end, text.length));
         suggestions = [];
+        $('#suggestions').html('');
         input.setCursorPosition(start + word.length);
     }
 
@@ -209,7 +210,7 @@
     if (typeof localStorage['varnam-input'] !== 'undefined') {
         input.val(localStorage['varnam-input']);
     }
-    
+
     if (typeof localStorage['varnam-fontsize'] !== 'undefined') {
         input.css('font-size', localStorage['varnam-fontsize'] + 'px');
         $('#font-size').val(localStorage['varnam-fontsize']);
