@@ -7,8 +7,8 @@
         <nav class="green">
             <div class="nav-wrapper">
                 <a href="#" class="brand-logo">Varnam</a>
-                <ul class="right hide-on-med-and-down">
-
+                <ul class="right">
+                    <li><a class="btn purple waves-effect waves-light modal-trigger" href="#settings">Settings</a></li>
                 </ul>
             </div>
         </nav>
@@ -21,6 +21,22 @@
                 <textarea id="input" class="materialize-textarea"></textarea>
                 <label for="textarea1">Textarea</label>
             </div>
+            </div>
+        </div>
+
+        <!-- Modal Structure -->
+        <div id="settings" class="modal">
+            <div class="modal-content">
+                <h4>Settings</h4>
+                <br/>
+                <div class="input-field">
+                    <label for="font-size">Font size</label>
+                    <input type="number" id="font-size" value="16" />
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a href="#!" class="waves-effect waves-green btn-flat" id="save-settings">Save</a>
+                <a href="#!" class="modal-close waves-effect waves-black btn-flat">Cancel</a>
             </div>
         </div>
 

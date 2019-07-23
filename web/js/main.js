@@ -201,8 +201,21 @@
         }
     });
 
+    $('#save-settings').on('click', function() {
+        localStorage['varnam-fontsize'] = $('#font-size').val();
+        input.css('font-size', localStorage['varnam-fontsize'] + 'px');
+    });
+
     if (typeof localStorage['varnam-input'] !== 'undefined') {
         input.val(localStorage['varnam-input']);
     }
-    input.focus();
+    
+    if (typeof localStorage['varnam-fontsize'] !== 'undefined') {
+        input.css('font-size', localStorage['varnam-fontsize'] + 'px');
+        $('#font-size').val(localStorage['varnam-fontsize']);
+    }
+
+    input.focus().characterCounter();
+
+    $('.modal').modal();
 //});
