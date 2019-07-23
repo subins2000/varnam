@@ -15,6 +15,8 @@ body {
 #suggestions {
     background: #fff;
     height: 70%;
+}
+#suggestions-content {
     counter-reset: item;
 }
 #suggestions li {
@@ -26,11 +28,14 @@ body {
     line-height: 48px;
     padding: 0 0 0 15px;
 }
-#suggestions li::after {
+#suggestions-content li::after, #suggestions-word::after {
     display: inline-block;
     content: counter(item);
     counter-increment: item;
     width: 2em;
     margin-left: -2em;
     float: right;
+}
+#suggestions-word::after {
+    content: "0";
 }

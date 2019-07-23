@@ -98,7 +98,7 @@
 
         input.val(text.substring(0, start) + word + text.substring(end, text.length));
         suggestions = [];
-        $('#suggestions').html('');
+        $('#suggestions-content').html('');
         input.setCursorPosition(start + word.length);
     }
 
@@ -109,8 +109,8 @@
             return;
 
         // numeric keys
-        if (e.keyCode >= 49 && e.keyCode <= 57) {
-            var i = e.keyCode - 49;
+        if (e.keyCode >= 48 && e.keyCode <= 57) {
+            var i = e.keyCode - 48;
 
             e.preventDefault();
 
@@ -124,8 +124,8 @@
             }
         }
 
-        if (e.keyCode == KEY.SPACE && typeof suggestions[0] !== 'undefined') {
-            replaceWord(suggestions[0]);
+        if (e.keyCode == KEY.SPACE && typeof suggestions[1] !== 'undefined') {
+            replaceWord(suggestions[1]);
         }
 
         localStorage['varnam-input'] = input.val();
@@ -153,7 +153,7 @@
                 break;
             default:
                 // numkeys & numpad
-                if ((e.keyCode >= 49 && e.keyCode <= 57) || (e.keyCode >= 97 && e.keyCode <= 105)) {
+                if ((e.keyCode >= 48 && e.keyCode <= 57) || (e.keyCode >= 96 && e.keyCode <= 105)) {
                     break;
                 }
                 if (!hasSpecialKeys) {
@@ -169,8 +169,8 @@
     });
 
     var html = '';
-    function displaySuggestions(s) {
-        html = '', suggestions = [];
+    function displaySuggestions(word, s) {
+        html = '', suggestions = [word];
         $.each(s, function(k, v) {
             if (v == '')
                 return
@@ -178,19 +178,19 @@
             suggestions.push(v);
             html += '<li class="waves-effect waves-green">' + v + '</li>';
         });
-        $('#suggestions').html(html);
+        $('#suggestions-word').html(word);
+        $('#suggestions-content').html(html);
     }
 
     eel.expose(showSuggestions);
     function showSuggestions(word, s) {
-        s.push(word); // the word iteself
-        displaySuggestions(s);
+        displaySuggestions(word, s);
         cachedSuggestions[word] = s;
     }
 
     function showCachedSuggestions(word) {
         if (typeof cachedSuggestions[word] !== 'undefined') {
-            displaySuggestions(cachedSuggestions[word]);
+            displaySuggestions(word, cachedSuggestions[word]);
             return true;
         }
         return false;
