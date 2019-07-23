@@ -126,6 +126,8 @@
         if (e.keyCode == KEY.SPACE && typeof suggestions[0] !== 'undefined') {
             replaceWord(suggestions[0]);
         }
+
+        localStorage['varnam-input'] = input.val();
     });
 
     input.on('keyup', function(e) {
@@ -193,5 +195,8 @@
         return false;
     }
 
+    if (typeof localStorage['varnam-input'] !== 'undefined') {
+        input.val(localStorage['varnam-input']);
+    }
     input.focus();
 //});
