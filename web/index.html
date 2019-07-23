@@ -1,25 +1,26 @@
 <html>
-  <head>
-    <link href="css/materialize.min.css" rel="stylesheet" />
-    <link href="css/main.css" rel="stylesheet" />
-  </head>
-  <body>
-    <div id="content">
-      <div class="row">
-        <div class="col l2 m4" id="sidebar">
-
+    <head>
+        <link href="css/materialize.min.css" rel="stylesheet" />
+        <link href="css/main.css" rel="stylesheet" />
+    </head>
+    <body>
+        <div id="content">
+            <div class="row">
+            <div class="col l2 m4">
+                <ul class="collection" id="suggestions"></ul>
+            </div>
+            <div class="input-field col l10 m8">
+                <textarea id="input" class="materialize-textarea"></textarea>
+                <label for="textarea1">Textarea</label>
+            </div>
+            </div>
         </div>
-        <div class="input-field col l10 m8">
-          <textarea id="input" class="materialize-textarea"></textarea>
-          <label for="textarea1">Textarea</label>
-        </div>
-      </div>
-    </div>
 
-    <script src="js/jquery-3.4.1.min.js"></script>
-    <script src="js/materialize.min.js"></script>
-    <script src="js/jquery.a-tools.js"></script>
-    <script src="js/jquery.wsuggest.js"></script>
-    <script src="js/main.js"></script>
-  </body>
+        <script src="js/jquery-3.4.1.min.js"></script>
+        <script src="js/materialize.min.js"></script>
+        <script src="js/jquery.a-tools.js"></script>
+        <script src="js/jquery.wsuggest.js"></script>
+        <script src="/eel.js"></script>
+        <script src="js/main.js"></script>
+    </body>
 </html>
