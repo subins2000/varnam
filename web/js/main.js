@@ -160,7 +160,8 @@
                     var chunk = getChunk();
                     if (chunk.length >= minChunkSize) {
                         if (!showCachedSuggestions(getChunk())){
-                            eel.transliterate(getChunk());
+                            l = typeof localStorage['varnam-language'] === 'undefined' ? 'ml' : localStorage['varnam-language'];
+                            eel.transliterate(l, getChunk());
                         }
                     }
                 }
@@ -205,6 +206,8 @@
     $('#save-settings').on('click', function() {
         localStorage['varnam-fontsize'] = $('#font-size').val();
         input.css('font-size', localStorage['varnam-fontsize'] + 'px');
+
+        localStorage['varnam-language'] = $('#language').val();
     });
 
     if (typeof localStorage['varnam-input'] !== 'undefined') {
@@ -216,7 +219,12 @@
         $('#font-size').val(localStorage['varnam-fontsize']);
     }
 
+    if (typeof localStorage['varnam-language'] !== 'undefined') {
+        $('#language').val(localStorage['varnam-language']);
+    }
+
     input.focus().characterCounter();
 
     $('.modal').modal();
+    $('select').formSelect();
 //});

@@ -14,20 +14,20 @@
         </nav>
         <div id="content">
             <div class="row">
-            <div class="col l2 m4">
-                <ul class="collection" id="suggestions">
-                    <li class="waves-effect waves-green" id="suggestions-word">word</li>
-                    <ul id="suggestions-content">
-                        <p>
-                            <center>Suggestions will be shown here<br/><br/>Press 0-9 to select them</center>
-                        </p>
+                <div class="col l2 m4">
+                    <ul class="collection" id="suggestions">
+                        <li class="waves-effect waves-green" id="suggestions-word">word</li>
+                        <ul id="suggestions-content">
+                            <p>
+                                <center>Suggestions will be shown here<br/><br/>Press 0-9 to select them</center>
+                            </p>
+                        </ul>
                     </ul>
-                </ul>
-            </div>
-            <div class="input-field col l10 m8">
-                <textarea id="input" class="materialize-textarea"></textarea>
-                <label for="textarea1">Textarea</label>
-            </div>
+                </div>
+                <div class="input-field col l10 m8">
+                    <textarea id="input" class="materialize-textarea"></textarea>
+                    <label for="textarea1">Textarea</label>
+                </div>
             </div>
         </div>
 
@@ -37,7 +37,18 @@
                 <h4>Settings</h4>
                 <br/>
                 <div class="input-field">
-                    <label for="font-size">Font size</label>
+                    <select id="language" class="materialize-select">
+                        <option value="ml">Malayalam</option>
+                        <option value="hi">Hindi</option>
+                        <option value="ta">Tamil</option>
+                        <option value="te">Telugu</option>
+                        <option value="bn">Bengali</option>
+                    </select>
+                    <label for="language">Language</label>
+                </div>
+                <br/>
+                <div class="input-field">
+                    <label for="font-size">Editor font size</label>
                     <input type="number" id="font-size" value="16" />
                 </div>
             </div>

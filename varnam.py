@@ -3,8 +3,8 @@ import subprocess
 
 
 @eel.expose
-def transliterate(text):
-    out = subprocess.run(['varnamc', '-s', 'ml', '-t', text], stdout=subprocess.PIPE).stdout.decode('utf-8')
+def transliterate(language, text):
+    out = subprocess.run(['varnamc', '-s', language, '-t', text], stdout=subprocess.PIPE).stdout.decode('utf-8')
     suggestions = out.split('\n')[0:9]
     eel.showSuggestions(text, suggestions)
 
