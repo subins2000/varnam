@@ -115,10 +115,14 @@
 
             if (typeof suggestions[i] !== 'undefined') {
                 replaceWord(suggestions[i]);
+                var obj = $('#suggestions li').eq(i);
+                obj.addClass('green white-text');
+                setTimeout(function() {
+                    obj.removeClass('green white-text');
+                }, 500);
             }
         }
 
-        console.log(suggestions);
         if (e.keyCode == KEY.SPACE && typeof suggestions[0] !== 'undefined') {
             replaceWord(suggestions[0]);
         }
@@ -151,10 +155,8 @@
                 }
                 if (!hasSpecialKeys) {
                     var chunk = getChunk();
-                    console.log(getChunk());
                     if (chunk.length >= minChunkSize) {
                         if (!showCachedSuggestions(getChunk())){
-                            console.log(getChunk());
                             eel.transliterate(getChunk());
                         }
                     }
@@ -171,7 +173,7 @@
                 return
             v = v.trim();
             suggestions.push(v);
-            html += '<li class="collection-item">' + v + '</li>';
+            html += '<li class="waves-effect waves-green">' + v + '</li>';
         });
         $('#suggestions').html(html);
     }
