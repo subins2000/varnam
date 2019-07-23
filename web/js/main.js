@@ -195,6 +195,12 @@
         return false;
     }
 
+    $(document).on('click', '#suggestions li', function() {
+        if (suggestions.length !== 0) {
+            replaceWord(suggestions[$(this).index()]);
+        }
+    });
+
     if (typeof localStorage['varnam-input'] !== 'undefined') {
         input.val(localStorage['varnam-input']);
     }
