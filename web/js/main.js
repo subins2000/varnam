@@ -231,5 +231,6 @@
     input.focus().characterCounter();
 
     $('.modal').modal();
+    $('.tabs').tabs();
     $('select').formSelect();
 //});
