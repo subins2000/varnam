@@ -1,13 +1,26 @@
 /**
- * Copyright Subin Siby <subinsb.com>
+ * Varnam Editor
+ * Copyright (c) 2019 Subin Siby <subinsb.com>
  * Licensed under GNU-GPL 3.0
  * --------------------------
  * Some code from jQuery asuggest plugin
  * Licensed under GNU-GPL 3.0
  * https://github.com/imankulov/asuggest/
+ * --------------------------
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, version 3 of the License
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-//$(document).ready(function() {
+$(document).ready(function() {
     var input = $('#input'),
         minChunkSize = 1,
         cycleOnTab = true,
@@ -233,4 +246,4 @@
     $('.modal').modal();
     $('.tabs').tabs();
     $('select').formSelect();
-//});
+});
