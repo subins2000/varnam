@@ -1,4 +1,5 @@
 import eel
+import os
 import subprocess
 
 
@@ -17,7 +18,7 @@ def main():
         except Exception as e:
             eel.showError(str(e))
 
-    eel.init('varnam/web')
+    eel.init(os.path.join(os.path.realpath(os.path.dirname(__file__)), 'web'))
 
     try:
         # try chromium/chrome

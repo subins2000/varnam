@@ -13,7 +13,9 @@ setup(
     install_requires=[
         'eel'
     ],
-    packages=find_packages(exclude=['web']),
+    packages=find_packages(),
+    package_data={'varnam': 'varnam/web/*'},
+    include_package_data = True,
     entry_points={'gui_scripts': [
         'varnam = varnam.Varnam:main'
     ]},
