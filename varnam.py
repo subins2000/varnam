@@ -21,6 +21,6 @@ eel.init('web')
 try:
     # try chromium/chrome
     eel.start('index.html')
-except:
+except EnvironmentError:
     print('Chromium not found. Opening in browser')
     eel.start('index.html', options={'mode': 'default'})
