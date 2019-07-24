@@ -189,6 +189,11 @@
         cachedSuggestions[word] = s;
     }
 
+    eel.expose(showError);
+    function showError(msg) {
+        M.toast({html: msg});
+    }
+
     function showCachedSuggestions(word) {
         if (typeof cachedSuggestions[word] !== 'undefined') {
             displaySuggestions(word, cachedSuggestions[word]);

@@ -4,9 +4,17 @@ import subprocess
 
 @eel.expose
 def transliterate(language, text):
-    out = subprocess.run(['varnamc', '-s', language, '-t', text], stdout=subprocess.PIPE).stdout.decode('utf-8')
-    suggestions = out.split('\n')[0:9]
-    eel.showSuggestions(text, suggestions)
+    try:
+        out = subprocess.run(['varnamc', '-s', language, '-t', text], stdout=subprocess.PIPE).stdout.decode('utf-8')
+
+        if out[0:1] == ' ':
+            suggestions = out.split('\n')[0:9]
+            eel.showSuggestions(text, suggestions)
+        else:
+            # Error message
+            eel.showError(out)
+    except Exception as e:
+        eel.showError(str(e))
 
 eel.init('web')
 eel.start('index.html', options={'mode': 'default'})
