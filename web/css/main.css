@@ -2,11 +2,13 @@ body {
     background: #eee;
 }
 .nav-wrapper {
+    margin: 0 auto;
     padding: 0 60px;
+    width: 90%;
 }
 #content {
     margin: 40px auto;
-    width: 95%;
+    width: 90%;
 }
 #input {
     height: 70%;
