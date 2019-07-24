@@ -17,4 +17,10 @@ def transliterate(language, text):
         eel.showError(str(e))
 
 eel.init('web')
-eel.start('index.html', options={'mode': 'default'})
+
+try:
+    # try chromium/chrome
+    eel.start('index.html')
+except:
+    print('Chromium not found. Opening in browser')
+    eel.start('index.html', options={'mode': 'default'})
