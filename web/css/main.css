@@ -1,5 +1,6 @@
 body {
     background: #eee;
+    overflow: hidden;
 }
 .nav-wrapper {
     margin: 0 auto;
@@ -7,16 +8,23 @@ body {
     width: 90%;
 }
 #content {
-    margin: 40px auto;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    padding: 90px 0;
     width: 90%;
 }
 #input {
-    height: 70%;
+    height: 100% !important;
     font-size: 18px;
+    overflow: auto;
 } 
 #suggestions {
     background: #fff;
-    height: 70%;
+    height: 100%;
 }
 #suggestions-content {
     counter-reset: item;
