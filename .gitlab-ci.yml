@@ -1,0 +1,20 @@
+stages:
+  - build
+
+flatpak:
+    image: ubuntu:19.10
+    stage: build
+    script:
+        - apt install flatpak
+        - flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+        - flatpak install flathub org.freedesktop.Platform/x86_64/18.08
+        - flatpak install flathub org.freedesktop.Sdk/x86_64/18.08
+        - git clone https://github.com/subins2000/varnam-flatpak.git flatpak
+        - flatpak-builder --repo=flatpak/repo flatpak/build --keep-build-dirs flatpak/com.varnamproject.Varnam.json
+        - flatpak build-bundle flatpak/repo varnam.flatpak com.varnamproject.Varnam.json
+    artifacts:
+        paths:
+            - varnam.flatpak
+    cache:
+        paths:
+            - .flatpak-builder/cache
