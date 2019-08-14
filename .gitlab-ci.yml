@@ -1,16 +1,14 @@
 stages:
   - build
 
-flatpak:
-    image: ananace/flatpak-builder:fdo-18.08
+package:
+    image: registry.gitlab.com/subins2000/docker-images/flatpak-freedesktop:latest
     stage: build
     script:
-        - apt update
-        - apt install -y git
         - git clone https://github.com/subins2000/varnam-flatpak.git flatpak
         - flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-        - flatpak-builder --repo=flatpak/repo --install-deps-from=flathub flatpak/build --keep-build-dirs flatpak/com.varnamproject.Varnam.json
-        - flatpak build-bundle flatpak/repo varnam.flatpak com.varnamproject.Varnam.json
+        - flatpak-builder --repo=flatpak/repo flatpak/build --keep-build-dirs flatpak/com.varnamproject.Varnam.json
+        - flatpak build-bundle flatpak/repo varnam.flatpak com.varnamproject.Varnam
     artifacts:
         paths:
             - varnam.flatpak
