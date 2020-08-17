@@ -12,6 +12,6 @@ Revamped Varnam Editor logo made by [Radhika Sharma](https://twitter.com/radhika
 
 ## TODO
 
-[ ] Use [varnamd](https://github.com/varnamproject/varnamd) instead of executing commands (was my stupid implementation choice). This will eliminate Ruby dependency for flatpak package (but then [`varnamc` won't work](https://github.com/varnamproject/libvarnam/issues/154))
-[ ] Add [spellchecker](https://gitlab.com/smc/mlmorph-spellchecker)
-[ ] Possibly make a browser editor
+* [ ] Use [varnamd](https://github.com/varnamproject/varnamd) instead of executing commands (was my stupid implementation choice). This will eliminate Ruby dependency for flatpak package (but then [`varnamc` won't work](https://github.com/varnamproject/libvarnam/issues/154))
+* [ ] Add [spellchecker](https://gitlab.com/smc/mlmorph-spellchecker)
+* [ ] Possibly make a browser editor
